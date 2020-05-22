@@ -60,16 +60,32 @@ function writePassword() {
     pooledArray = pooledArray.concat(special);
   }
 
-  console.log(lowercasePrompt);
-  console.log(uppercasePrompt); 
-  console.log(numberPrompt); 
-  console.log(specialPrompt);
+  //console.log(lowercasePrompt);
+  //console.log(uppercasePrompt); 
+  //console.log(numberPrompt); 
+  //console.log(specialPrompt);
   
-  console.log(pooledArray);
+  //console.log(pooledArray);
 
+  var password = generatePassword();
+  var passwordFormation = "";
+
+    function generatePassword() {
+      for (var i = 0; i < passwordLength; i++) {
+
+        var random = Math.floor(Math.random() * pooledArray.length);
+        
+        passwordFormation = passwordFormation + pooledArray[random];
+
+        //console.log(passwordFormation);
+      }
+    
+
+
+    }
 }
 
-//  var password = generatePassword();
+
 //  var passwordText = document.querySelector("#password");
 //  passwordText.value = password;    
 
