@@ -1,7 +1,7 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
-// setting variables --- Initial password length set it zero to initialize it as a number.
+// setting variables --- Initial password length set to 0
 var passwordLength = "0";
 
 // arrays set for possible password components
@@ -11,17 +11,6 @@ var number = ["0","1","2","3","4","5","6","7","8","9"];
 var special = ["!","@","#","$","%","^","*","?"];
 var pooledArray = [];
 
-        // confirm array details
-        console.log("Lowercase" + lowercase.length);
-        console.log("uppercase" + uppercase.length);
-        console.log("number" + number.length);
-        console.log("special" + special.length);
-
-        console.log(lowercase);
-        console.log(uppercase);
-        console.log(number);
-        console.log(special);
-
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
@@ -30,23 +19,24 @@ function writePassword() {
 
   var passwordLength = prompt("Passwords can be between 8 and 128 characters.  How long would you like your password to be?");
       
-        while(passwordLength < 8 || passwordLength > 128 || isNaN(passwordLength)) {
-          passwordLength = prompt("Please pick a number between 8 and 128.");
-        }
-        console.log(passwordLength);
-       
+      while(passwordLength < 8 || passwordLength > 128 || isNaN(passwordLength)) {
+        passwordLength = prompt("Please pick a number between 8 and 128.");
+      }
+
+      passwordLength = parseInt(passwordLength);
+              
   var lowercasePrompt = confirm("Would you like to include lowercase letters?");
   var uppercasePrompt = confirm("Would you like to include uppercase letters?");
   var numberPrompt = confirm("Would you like to include numbers?");
   var specialPrompt = confirm("Would you like to include special characters (like punctuation marks)?");
 
-        while(lowercasePrompt === false && uppercasePrompt === false && numberPrompt === false && specialPrompt === false) {
-          var universalPrompt = alert("You must select one of the character types to generate a password.");
-          var lowercasePrompt = confirm("Would you like to include lowercase letters?");
-          var uppercasePrompt = confirm("Would you like to include uppercase letters?");
-          var numberPrompt = confirm("Would you like to include numbers?");
-          var specialPrompt = confirm("Would you like to include special characters (like punctuation marks)?");
-        }
+      while(lowercasePrompt === false && uppercasePrompt === false && numberPrompt === false && specialPrompt === false) {
+        var universalPrompt = alert("You must select one of the character types to generate a password.");
+        var lowercasePrompt = confirm("Would you like to include lowercase letters?");
+        var uppercasePrompt = confirm("Would you like to include uppercase letters?");
+        var numberPrompt = confirm("Would you like to include numbers?");
+        var specialPrompt = confirm("Would you like to include special characters (like punctuation marks)?");
+      }
 
   if(lowercasePrompt === true) {
     pooledArray = pooledArray.concat(lowercase); 
@@ -61,32 +51,21 @@ function writePassword() {
     pooledArray = pooledArray.concat(special);
   }
 
-          console.log(lowercasePrompt);
-          console.log(uppercasePrompt); 
-          console.log(numberPrompt); 
-          console.log(specialPrompt);
-          
-          console.log(pooledArray);
-
+  var passwordText = document.querySelector("#password");         
   var password = generatePassword();
-  var passwordFormation = "";
+  
+  passwordText.value = password;
 
     function generatePassword() {
+      var finalPassword = "";
       for (var i = 0; i < passwordLength; i++) {
 
         var random = Math.floor(Math.random() * pooledArray.length);
         
-        passwordFormation = passwordFormation + pooledArray[random];
-
-        passwordFormation = passwordFormation.toString();
-
-        ////STILL AN ERROR --- RANDOM PASSWORD GENERATES AND CONSOLE.LOGS, BUT SHOWS UNDEFINED BEFORE PASSWORD STRING   
-        console.log(passwordFormation);
+        finalPassword = finalPassword + pooledArray[random];
+        
       }
- 
+      return finalPassword;
     }
 }
 
-//////////////////THEN the password is either displayed in an alert or written to the page
-var passwordText = document.querySelector("#password");
-passwordText.value = password;    
