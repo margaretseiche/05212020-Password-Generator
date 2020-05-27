@@ -9,7 +9,7 @@ var lowercase = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p"
 var uppercase = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
 var number = ["0","1","2","3","4","5","6","7","8","9"];
 var special = ["!","@","#","$","%","^","*","?"];
-var pooledArray = [];
+var pooledArrayObject = {};
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
@@ -37,20 +37,7 @@ function writePassword() {
         var numberPrompt = confirm("Would you like to include numbers?");
         var specialPrompt = confirm("Would you like to include special characters (like punctuation marks)?");
       }
-
-  if(lowercasePrompt === true) {
-    pooledArray = pooledArray.concat(lowercase); 
-  }  
-  if (uppercasePrompt === true) {
-    pooledArray = pooledArray.concat(uppercase);
-  }  
-  if (numberPrompt === true) {
-    pooledArray = pooledArray.concat(number);
-  }
-  if (specialPrompt === true) {  
-    pooledArray = pooledArray.concat(special);
-  }
-
+    
   var passwordText = document.querySelector("#password");         
   var password = generatePassword();
   
@@ -59,13 +46,25 @@ function writePassword() {
     function generatePassword() {
       var finalPassword = "";
       for (var i = 0; i < passwordLength; i++) {
-
-        var random = Math.floor(Math.random() * pooledArray.length);
-        
-        finalPassword = finalPassword + pooledArray[random];
-        
-      }
-      return finalPassword;
+        if(lowercasePrompt === true && finalPassword.length < passwordLength) {
+          var random = Math.floor(Math.random() * lowercase.length);
+          finalPassword = finalPassword + lowercase[random];
+        }
+        if (uppercasePrompt === true && finalPassword.length < passwordLength) {
+          var random = Math.floor(Math.random() * uppercase.length);
+          finalPassword = finalPassword + uppercase[random];
+        }              
+        if (numberPrompt === true && finalPassword.length < passwordLength) {
+          var random = Math.floor(Math.random() * number.length);
+          finalPassword = finalPassword + number[random];
+        }          
+        if (specialPrompt === true && finalPassword.length < passwordLength) {  
+          var random = Math.floor(Math.random() * special.length);
+          finalPassword = finalPassword + special[random];
+        }
+        else if (finalPassword.length = passwordLength) {
+          return finalPassword;
+        }  
+        }
     }
 }
-
