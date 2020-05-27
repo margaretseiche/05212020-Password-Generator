@@ -62,9 +62,9 @@ function writePassword() {
           var random = Math.floor(Math.random() * special.length);
           finalPassword = finalPassword + special[random];
         }
-        else if (finalPassword.length = passwordLength) {
+        else if (finalPassword.length === passwordLength) {
           return finalPassword;
         }  
-        }
+      }
     }
 }

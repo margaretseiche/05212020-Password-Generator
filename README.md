@@ -48,3 +48,15 @@ So I went back to start the
     Then I completed the inner function to actually generate the password.  I ran a for loop for the length of the password.  Within the loop, I used a random number generator and pulled a value from pooledArray using that random number (during each loop) as the index (where to pull from the array).  I console.logged it and the password appears, but it has an 'undefined' error coming up.  I tried to convert to a string, but it still comes back as an error.
 
     The intention with the final two lines in Javascript was to have the random password appear on screen in the white section of the box. 
+
+    *************************************************************************************************************
+    AFTER SUBMISSION #1
+    Feedback was that having output in console.log is insufficient.  In the context of a client project, of course that makes sense.  (What client would pay for something that appears in console log with an error, but not onscreen at all?)
+
+    The hint about moving one line above the other helped.
+
+    The TA from class helped to get it to display correctly.  But he mentioned that he thought that the assignment required having each selected character type in the generated password.  My original attempt had a pooled array, so characters were randomly selected from the set of 70.  If someone selected special characters, those were included in the pooled array, but would only be included in the actual password if by chance the random selection picked them from the pooled array.  (Chance could just as easily exclude them.)  To prevent such exclusion, I reworked the generatePassword function.  
+    
+    The for loop is still set for iteration through the requested password length.  So if a user wants a password with 10 characters, it loops 10 times.
+
+    There are 4 if statements --- one per character type --- including them if the user requested them AND if the password generated so far is not long enough yet.  That provides a way to cycle through each requested type without the password getting too long.
