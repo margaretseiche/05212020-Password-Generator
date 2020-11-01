@@ -5,6 +5,8 @@ Stylistically, I changed the colors a bit, as I knew that I would be looking at 
 I also made it look a little more like a real page, changing the header and text to something more like
 what a company might include on a page like this.
 
+![Snapshot of Deployed Version](/screenshots of finished project/Password Generator.JPG)
+
 For Javascript:
 
 I set the following variables.
