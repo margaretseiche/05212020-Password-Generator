@@ -1,11 +1,6 @@
 # 05212020-Password-Generator
 
-Stylistically, I changed the colors a bit, as I knew that I would be looking at this for awhile.
-
-I also made it look a little more like a real page, changing the header and text to something more like
-what a company might include on a page like this.
-
-![Snapshot of Deployed Version](/screenshots of finished project/Password Generator.JPG)
+![Snapshot of Deployed Version](https://github.com/margaretseiche/05212020-Password-Generator/blob/master/screenshots%20of%20finished%20project/Password%20Generator.JPG)
 
 For Javascript:
 
