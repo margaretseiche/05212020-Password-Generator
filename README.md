@@ -2,7 +2,7 @@
 
 ![Snapshot of Deployed Version](https://github.com/margaretseiche/05212020-Password-Generator/blob/master/screenshots%20of%20finished%20project/Password%20Generator.JPG)
 
-https://margaretseiche.github.io/05212020-Password-Generator/
+https://margaretseiche.github.io/Password-Generator/
 
 For Javascript:
 
