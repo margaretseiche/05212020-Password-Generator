@@ -4,6 +4,8 @@
 
 https://margaretseiche.github.io/Password-Generator/
 
+## Description
+
 For Javascript:
 
 I set the following variables.
@@ -59,3 +61,15 @@ So I went back to start the
     The for loop is still set for iteration through the requested password length.  So if a user wants a password with 10 characters, it loops 10 times.
 
     There are 4 if statements --- one per character type --- including them if the user requested them AND if the password generated so far is not long enough yet.  That provides a way to cycle through each requested type without the password getting too long.
+
+## Contributors
+Margaret Seiche
+
+## Tests
+none
+
+## Github Profile
+margaretseiche
+
+## Questions? Email to     
+seichemargaret@gmail.com
