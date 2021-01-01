@@ -5,6 +5,9 @@
 https://margaretseiche.github.io/Password-Generator/
 
 ## Description
+People are often asked to use robust passwords, particularly for their company email accounts.  This app makes it easier by creating unique passwords that fit specified criteria --- number of characters in the password as well as a choice of character types to include (lowercase letters, uppercase letters, numbers, special characters).  
+
+## Methodology
 
 For Javascript:
 
