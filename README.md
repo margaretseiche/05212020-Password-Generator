@@ -1,13 +1,14 @@
-# Password Generator
+# 05212020-Password-Generator
 
-![Snapshot of Deployed Version](https://github.com/margaretseiche/05212020-Password-Generator/blob/master/screenshots%20of%20finished%20project/Password%20Generator.JPG)
+01/31/2021 update: converted from plain Javascript to jQuery and ES6 where possible.  Attempted to convert function to ES6 arrow functions, but resulted in error message (from calling the function before it was created --- could not resolve it by moving earlier so left as is in plain function form). 
+____________________________________
 
-https://margaretseiche.github.io/Password-Generator/
+Original 5/2020 version:
 
-## Description
-People are often asked to use robust passwords, particularly for their company email accounts.  This app makes it easier by creating unique passwords that fit specified criteria --- number of characters in the password as well as a choice of character types to include (lowercase letters, uppercase letters, numbers, special characters).  
+Stylistically, I changed the colors a bit, as I knew that I would be looking at this for awhile.
 
-## Methodology
+I also made it look a little more like a real page, changing the header and text to something more like
+what a company might include on a page like this.
 
 For Javascript:
 
@@ -64,15 +65,3 @@ So I went back to start the
     The for loop is still set for iteration through the requested password length.  So if a user wants a password with 10 characters, it loops 10 times.
 
     There are 4 if statements --- one per character type --- including them if the user requested them AND if the password generated so far is not long enough yet.  That provides a way to cycle through each requested type without the password getting too long.
-
-## Contributors
-Margaret Seiche
-
-## Tests
-none
-
-## Github Profile
-margaretseiche
-
-## Questions? Email to     
-seichemargaret@gmail.com
